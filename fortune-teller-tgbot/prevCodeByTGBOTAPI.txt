@@ -1,0 +1,116 @@
+package main
+
+import (
+	"log"
+	"net/http"
+
+	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
+)
+
+var bot *tgbotapi.BotAPI
+var chatID int64
+
+func sendMessage(msg string) {
+	msgConfig := tgbotapi.NewMessage(chatID, msg)
+	bot.Send(msgConfig)
+}
+
+// Handler for the WebApp endpoint
+func web(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("Welcome to the Pizza Order System!"))
+}
+
+func main() {
+	var err error
+	bot, err = tgbotapi.NewBotAPI("BOT_TOKEN")
+	if err != nil {
+		log.Panic(err)
+	}
+	bot.Debug = true
+	log.Printf("Authorized on account %s", bot.Self.UserName)
+
+	http.HandleFunc("/webapp", web) // WebApp endpoint for mini-app screen
+	go http.ListenAndServe(":8080", nil) // Run server in a separate goroutine
+
+	u := tgbotapi.NewUpdate(0)
+	u.Timeout = 60
+
+	updates := bot.GetUpdatesChan(u)
+
+	for update := range updates {
+		if update.Message != nil {
+			if update.Message.Text == "/start" {
+				chatID = update.Message.Chat.ID
+				sendMessage("Order The Best Pizzas in Almaty with just a few clicks!")
+			}
+			if update.Message.Text == "/order" {
+				// Create a WebApp button linking to the mini-app interface
+				webApp := tgbotapi.NewWebApp("Order Pizza", "https://yourdomain.com/webapp")
+				replyMarkup := tgbotapi.NewInlineKeyboardMarkup(
+					tgbotapi.NewInlineKeyboardRow(webApp),
+				)
+				msg := tgbotapi.NewMessage(chatID, "Click below to start your order:")
+				msg.ReplyMarkup = replyMarkup
+				bot.Send(msg)
+			}
+		}
+	}
+}
+package main
+
+import (
+"log"
+"net/http"
+
+tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
+)
+
+var bot *tgbotapi.BotAPI
+var chatID int64
+
+func sendMessage(msg string) {
+	msgConfig := tgbotapi.NewMessage(chatID, msg)
+	bot.Send(msgConfig)
+}
+
+// Handler for the WebApp endpoint
+func web(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("Welcome to the Pizza Order System!"))
+}
+
+func main() {
+	var err error
+	bot, err = tgbotapi.NewBotAPI("BOT_TOKEN")
+	if err != nil {
+		log.Panic(err)
+	}
+	bot.Debug = true
+	log.Printf("Authorized on account %s", bot.Self.UserName)
+
+	http.HandleFunc("/webapp", web) // WebApp endpoint for mini-app screen
+	go http.ListenAndServe(":8080", nil) // Run server in a separate goroutine
+
+	u := tgbotapi.NewUpdate(0)
+	u.Timeout = 60
+
+	updates := bot.GetUpdatesChan(u)
+
+	for update := range updates {
+		if update.Message != nil {
+			if update.Message.Text == "/start" {
+				chatID = update.Message.Chat.ID
+				sendMessage("Order The Best Pizzas in Almaty with just a few clicks!")
+			}
+			if update.Message.Text == "/order" {
+				// Create a WebApp button linking to the mini-app interface
+				webApp := tgbotapi.NewWebApp("Order Pizza", "https://yourdomain.com/webapp")
+				replyMarkup := tgbotapi.NewInlineKeyboardMarkup(
+					tgbotapi.NewInlineKeyboardRow(webApp),
+				)
+				msg := tgbotapi.NewMessage(chatID, "Click below to start your order:")
+				msg.ReplyMarkup = replyMarkup
+				bot.Send(msg)
+			}
+		}
+	}
+}
