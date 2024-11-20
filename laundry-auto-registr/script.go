@@ -37,7 +37,6 @@ func main() {
 			}
 			fmt.Printf("Received %s\n", body)
 			//TODO:
-			// parse the html...
 			// register the laundry automatically (press the button)
 
 			break
