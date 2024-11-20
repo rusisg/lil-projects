@@ -2,14 +2,22 @@ package main
 
 import (
 	"fmt"
+	"github.com/joho/godotenv"
+	"io"
 	"net/http"
+	"os"
 	"time"
 )
 
 func main() {
-	url := "http://172.28.0.1:8090/"
+	err := godotenv.Load(".env")
+	if err != nil {
+		fmt.Println("Error loading .env file")
+	}
 
-	targetTime := time.Date(2024, time.Now().Month(), time.Now().Day(), 18, 16, 0, 0, time.Local)
+	url := os.Getenv("URL")
+
+	targetTime := time.Date(2024, time.Now().Month(), time.Now().Day(), 18, 16, 0, 0, time.UTC)
 
 	for {
 		now := time.Now()
@@ -22,6 +30,12 @@ func main() {
 			}
 			defer resp.Body.Close()
 
+			body, err := io.ReadAll(resp.Body)
+			if err != nil {
+				fmt.Printf("Error while reading -> %v\n", err)
+				return
+			}
+			fmt.Printf("Received %s\n", body)
 			//TODO:
 			// parse the html...
 			// register the laundry automatically (press the button)
