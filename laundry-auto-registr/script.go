@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/joho/godotenv"
 	"io"
+	"log"
 	"net/http"
 	"os"
 	"time"
@@ -28,7 +29,12 @@ func main() {
 				fmt.Printf("Error: ", err)
 				return
 			}
-			defer resp.Body.Close()
+			defer func(Body io.ReadCloser) {
+				err := Body.Close()
+				if err != nil {
+					log.Fatal(err)
+				}
+			}(resp.Body)
 
 			body, err := io.ReadAll(resp.Body)
 			if err != nil {
