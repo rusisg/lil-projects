@@ -29,6 +29,7 @@ func main() {
 				fmt.Printf("Error: ", err)
 				return
 			}
+
 			defer func(Body io.ReadCloser) {
 				err := Body.Close()
 				if err != nil {
@@ -42,8 +43,26 @@ func main() {
 				return
 			}
 			fmt.Printf("Received %s\n", body)
+
 			//TODO:
 			// register the laundry automatically (press the button)
+			formData := url.Values{
+				"laundry_type": {"8"}, // Assuming value "8" corresponds to the laundry type
+			}
+			resp, err = http.PostForm(url+"pralnia8.php", formData)
+			if err != nil {
+				fmt.Printf("Error sending POST request: %v\n", err)
+				return
+			}
+			defer resp.Body.Close()
+
+			// Handle response (optional)
+			body, err = io.ReadAll(resp.Body)
+			if err != nil {
+				fmt.Printf("Error reading response body: %v\n", err)
+				return
+			}
+			fmt.Printf("Response: %s\n", body)
 
 			break
 		}
