@@ -19,14 +19,18 @@ func main() {
 
 	url := os.Getenv("URL")                         // The URL to check
 	buttonPressURL := os.Getenv("BUTTON_PRESS_URL") // The API endpoint for pressing the button
-	targetTime := time.Date(2024, time.Now().Month(), time.Now().Day(), 18, 16, 0, 0, time.UTC)
+
+	timeZone := time.FixedZone("GMT+1", 1*60*60)
+	targetTime := time.Date(2024, time.Now().Month(), time.Now().Day(), 18, 16, 0, 0, timeZone)
 
 	for {
 		now := time.Now()
+		log.Println("Starting the loop...")
 
 		if now.After(targetTime) {
 			// Check the status of the URL
 			resp, err := http.Get(url)
+			fmt.Println("Get URL")
 			if err != nil {
 				fmt.Printf("Error: %v\n", err)
 				return
@@ -37,6 +41,7 @@ func main() {
 				if err != nil {
 					log.Fatal(err)
 				}
+				fmt.Println("Body close")
 			}(resp.Body)
 
 			body, err := io.ReadAll(resp.Body)
