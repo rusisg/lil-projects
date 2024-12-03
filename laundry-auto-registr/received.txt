@@ -1,2 +1,331 @@
 FUTURE_RECEIVED_BODY
 
+
+2024/11/24 18:21:03 Starting the loop...
+Get URL
+Received: <html>
+
+<head>
+
+<style>
+body {
+   background-image: url("images/tlo_pralnia.png");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+</style>
+
+</head>
+
+<body>
+
+
+<script type="text/javascript">
+
+function TestUser(Message) {
+
+        if(Message == undefined)
+        {
+        if (confirm('Are you sure you want to that?')) {
+    return true;
+        } else {
+    return false;
+    }
+        }
+        else
+        {
+    if (confirm(Message)) {
+    return true;
+        } else {
+    return false;
+    }
+        }
+}
+
+</script>
+
+        <div align="center">
+                <textarea readonly rows="2" cols="90" style="font-size: 20px; color: red; text-align:center; background: rgba(255,255,255,0.7);">
+Mozesz zarejestrowac sie tylko na dwie godziny pralni w calym akademiku.
+You can register for only two hours in whole dorm.</textarea>
+        </div>
+        <div align="center"><textarea readonly rows="2" cols="90" style="font-size: 20px; color: red; text-align:center; background: rgba(255,255,255,0.7);">Next rotate in: 6 days, 22 hours, 55 minutes</textarea></div>
+
+<style>
+
+
+table,th {
+    border: 1px solid black;
+    text-align: center;
+    vertical-align:middle;
+    font-size: 110%;
+    background: rgba(255,255,255,0.65);
+    table-layout: fixed;
+    height: 70px;
+}
+
+
+th.BLUE {
+    border: 1px solid blue;
+}
+th.RED {
+    border: 1px solid red;
+}
+th.GREEN {
+    border: 1px solid green;
+
+}
+th.PINK {
+    border: 1px solid pink;
+}
+th.WHITE {
+    border: 1px solid black;
+    background-color: black;
+    color: red;
+}
+input.WHITE {
+        border: 1px solid black;
+        background-color: black;
+        color: red;
+        font-size: 23px;
+        white-space: normal;
+}
+
+
+
+</style>
+
+<div align="left">
+
+<table width="100%" rowspacing="10">
+
+<tr>
+        <th>
+        <pre>   Data ->
+Godzina&#9660;</pre>
+        </th>
+        <th>2024-11-25</th><th>26.11.2024</th><th>27.11.2024</th><th>28.11.2024</th><th>29.11.2024</th><th>30.11.2024</th><th>01.12.2024</th>
+</tr>
+<tr>
+        <th>
+        06:00 - 08:00
+        </th>
+        <th class="PINK">908<br></th>
+                                <th class="PINK">
+                                <form action="register.php" method="post">
+                                <br>
+                                <input type="image" src="images/reg.png" width="65%"></input>
+                                <input type="hidden" name="reg" value="20241126-06:00-8"></input>
+                                </form>
+                                </th>
+
+                                <th class="PINK">
+                                <form action="register.php" method="post">
+                                <br>
+                                <input type="image" src="images/reg.png" width="65%"></input>
+                                <input type="hidden" name="reg" value="20241127-06:00-8"></input>
+                                </form>
+                                </th>
+
+                                <th class="PINK">
+                                <form action="register.php" method="post">
+                                <br>
+                                <input type="image" src="images/reg.png" width="65%"></input>
+                                <input type="hidden" name="reg" value="20241128-06:00-8"></input>
+                                </form>
+                                </th>
+
+                                <th class="PINK">
+                                <form action="register.php" method="post">
+                                <br>
+                                <input type="image" src="images/reg.png" width="65%"></input>
+                                <input type="hidden" name="reg" value="20241129-06:00-8"></input>
+                                </form>
+                                </th>
+
+                                <th class="PINK">
+                                <form action="register.php" method="post">
+                                <br>
+                                <input type="image" src="images/reg.png" width="65%"></input>
+                                <input type="hidden" name="reg" value="20241130-06:00-8"></input>
+                                </form>
+                                </th>
+
+                                <th class="PINK">
+                                <form action="register.php" method="post">
+                                <br>
+                                <input type="image" src="images/reg.png" width="65%"></input>
+                                <input type="hidden" name="reg" value="20241201-06:00-8"></input>
+                                </form>
+                                </th>
+
+</tr>
+<tr>
+        <th>
+        08:00 - 10:00
+        </th>
+
+                                <th class="BLUE">
+                                <form action="register.php" method="post">
+                                <br>
+                                <input type="image" src="images/reg.png" width="65%"></input>
+                                <input type="hidden" name="reg" value="20241125-08:00-8"></input>
+                                </form>
+                                </th>
+                                <th class="BLUE">907<br></th>
+                                <th class="BLUE">
+                                <form action="register.php" method="post">
+                                <br>
+                                <input type="image" src="images/reg.png" width="65%"></input>
+                                <input type="hidden" name="reg" value="20241127-08:00-8"></input>
+                                </form>
+                                </th>
+                                <th class="BLUE">814<br></th>
+                                <th class="BLUE">
+                                <form action="register.php" method="post">
+                                <br>
+                                <input type="image" src="images/reg.png" width="65%"></input>
+                                <input type="hidden" name="reg" value="20241129-08:00-8"></input>
+                                </form>
+                                </th>
+
+                                <th class="BLUE">
+                                <form action="register.php" method="post">
+                                <br>
+                                <input type="image" src="images/reg.png" width="65%"></input>
+                                <input type="hidden" name="reg" value="20241130-08:00-8"></input>
+                                </form>
+                                </th>
+
+                                <th class="BLUE">
+                                <form action="register.php" method="post">
+                                <br>
+                                <input type="image" src="images/reg.png" width="65%"></input>
+                                <input type="hidden" name="reg" value="20241201-08:00-8"></input>
+                                </form>
+                                </th>
+
+</tr>
+<tr>
+        <th>
+        10:00 - 12:00
+        </th>
+        <th class="RED">910<br></th><th class="RED">511<br></th><th class="RED">9999<br></th><th class="RED">730<br></th><th class="RED">427<br></th>
+                                <th class="RED">
+                                <form action="register.php" method="post">
+                                <br>
+                                <input type="image" src="images/reg.png" width="65%"></input>
+                                <input type="hidden" name="reg" value="20241130-10:00-8"></input>
+                                </form>
+                                </th>
+
+                                <th class="RED">
+                                <form action="register.php" method="post">
+                                <br>
+                                <input type="image" src="images/reg.png" width="65%"></input>
+                                <input type="hidden" name="reg" value="20241201-10:00-8"></input>
+                                </form>
+                                </th>
+
+</tr>
+<tr>
+        <th>
+        12:00 - 14:00
+        </th>
+        <th class="GREEN">819<br></th><th class="GREEN">425<br></th><th class="GREEN">433<br></th><th class="GREEN">527<br></th><th class="GREEN">603<br></th>
+                                <th class="GREEN">
+                                <form action="register.php" method="post">
+                                <br>
+                                <input type="image" src="images/reg.png" width="65%"></input>
+                                <input type="hidden" name="reg" value="20241130-12:00-8"></input>
+                                </form>
+                                </th>
+                                <th class="GREEN">606<br></th>
+</tr>
+<tr>
+        <th>
+        14:00 - 16:00
+        </th>
+        <th class="PINK">714<br></th><th class="PINK">426<br></th><th class="PINK">509<br></th><th class="PINK">619<br></th><th class="PINK">523<br></th>
+                                <th class="PINK">
+                                <form action="register.php" method="post">
+                                <br>
+                                <input type="image" src="images/reg.png" width="65%"></input>
+                                <input type="hidden" name="reg" value="20241130-14:00-8"></input>
+                                </form>
+                                </th>
+
+                                <th class="PINK">
+                                <form action="register.php" method="post">
+                                <br>
+                                <input type="image" src="images/reg.png" width="65%"></input>
+                                <input type="hidden" name="reg" value="20241201-14:00-8"></input>
+                                </form>
+                                </th>
+
+</tr>
+<tr>
+        <th>
+        16:00 - 18:00
+        </th>
+        <th class="BLUE">634<br></th><th class="BLUE">230<br></th><th class="BLUE">419<br></th>
+                                <th class="BLUE">
+                                <form action="register.php" method="post">
+                                <br>
+                                <input type="image" src="images/reg.png" width="65%"></input>
+                                <input type="hidden" name="reg" value="20241128-16:00-8"></input>
+                                </form>
+                                </th>
+
+                                <th class="BLUE">
+                                <form action="register.php" method="post">
+                                <br>
+                                <input type="image" src="images/reg.png" width="65%"></input>
+                                <input type="hidden" name="reg" value="20241129-16:00-8"></input>
+                                </form>
+                                </th>
+
+                                <th class="BLUE">
+                                <form action="register.php" method="post">
+                                <br>
+                                <input type="image" src="images/reg.png" width="65%"></input>
+                                <input type="hidden" name="reg" value="20241130-16:00-8"></input>
+                                </form>
+                                </th>
+                                <th class="BLUE">618<br></th>
+</tr>
+<tr>
+        <th>
+        18:00 - 20:00
+        </th>
+        <th class="RED">617<br></th><th class="RED">809<br></th><th class="RED">610<br></th><th class="RED">530<br></th><th class="RED">919<br></th><th class="RED">123<br></th><th class="RED">115<br></th>
+</tr>
+
+<tr>
+        <th>
+        20:00 - 22:00
+        </th>
+        <th class="GREEN">421<br></th><th class="GREEN">502<br></th><th class="GREEN">417<br></th><th class="GREEN">414<br></th><th class="GREEN">513<br></th><th class="GREEN">422<br></th><th class="GREEN">801<br></th>
+</tr>
+</table>
+</div>
+
+<br>
+<div align="left">
+<form action="index.php" style="float:left;" >
+<input type="image" src="images/powrot.png" height="7%"></input>
+</form>
+<form action="report.php" style="float: left;">
+<input type="image" src="images/problemeng.png" height="20%"</input>
+</form>
+<form action="terms.php" style="float:left;">
+<input type="image" src="images/info.png" height="20%"</input>
+</form>
+</div>
+
+
+</body>
+</html>
+
+Error sending request: Post "": unsupported protocol scheme ""
+Body close
