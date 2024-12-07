@@ -1,12 +1,14 @@
 package main
 
 import (
+	"context"
 	"fmt"
-	"github.com/joho/godotenv"
 	"net/http"
 	"net/url"
 	"os"
 	"time"
+
+	"github.com/joho/godotenv"
 )
 
 func main() {
@@ -20,11 +22,20 @@ func main() {
 
 	timeZone := time.FixedZone("GMT+1", 1*60*60)
 	targetTime := time.Date(2024, time.Now().Month(), time.Now().Day(), 17, 16, 0, 0, timeZone)
-	//targetTime := time.Date(2024, time.Now().Month(), time.Now().Day(), time.Now().Hour(), time.Now().Minute(), 0, 0, timeZone)
+	// targetTime := time.Date(2024, time.Now().Month(), time.Now().Day(), time.Now().Hour(), time.Now().Minute(), 0, 0, timeZone)
+
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(30*time.Second))
+	defer cancel()
 
 	for {
 		now := time.Now()
 
+		select {
+		case <-ctx.Done():
+			fmt.Println("Context deadline exceeded. Exiting loop...")
+			return
+		default:
+		}
 		if now.After(targetTime) {
 			// Check the status of the URL
 			resp, err := http.Get(urlToCheck)
